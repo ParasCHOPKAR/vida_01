@@ -1,0 +1,184 @@
+/* ============================= */
+/*  AUTO SLIDING BACKGROUND TEXT */
+/* ============================= */
+
+.aboutBGSlider {
+  position: absolute;
+  top: 80px;             /* Moved downward */
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sliderTrack {
+  white-space: nowrap;
+  display: inline-block;
+  padding-left: 100%;
+  animation: slideText 69s linear infinite;
+}
+
+.sliderTrack p {
+  font-size: 70px;
+  font-weight: 800;
+  opacity: 0.53;                 /* More visible */
+  color: #1c1c1c;
+  letter-spacing: 4px;
+}
+
+@keyframes slideText {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+/* ============================= */
+/*     MAIN ABOUT SECTION        */
+/* ============================= */
+
+.homeAboutSection {
+  width: 100%;
+  padding: 120px 0;    /* Extra padding to match new slider position */
+  position: relative;
+  background: #f7faff;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  z-index: 1;
+}
+
+.homeAboutContainer {
+  max-width: 1200px;
+  margin: auto;
+margin-top: 99px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  z-index: 5;
+}
+
+/* ---------- LEFT SIDE --------- */
+.homeAboutLeft {
+  flex: 1;
+}
+
+.aboutTag {
+  background: #e8f0fd;
+  color: #3a7bff;
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 14px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.aboutTitle {
+  margin-top: 20px;
+  font-size: 42px;
+  font-weight: 700;
+  color: #1c1c1c;
+  line-height: 1.2;
+}
+
+.aboutText {
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  max-width: 450px;
+}
+
+.aboutStats {
+  margin-top: 25px;
+}
+
+.aboutStats p {
+  margin-bottom: 10px;
+  font-size: 17px;
+  color: #333;
+  font-weight: 500;
+}
+
+.aboutStats span {
+  font-weight: 700;
+  color: #3a7bff;
+}
+
+/* Button */
+.aboutButton {
+  margin-top: 25px;
+  padding: 12px 24px;
+  background: #3a7bff;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.aboutButton:hover {
+  background: #255dd8;
+}
+
+/* ------------- RIGHT SIDE IMAGE ------------ */
+.homeAboutRight {
+  position: relative;
+  flex: 1;
+}
+
+.aboutImg {
+  width: 380px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.aboutImgTop {
+  position: absolute;
+  top: 10px;
+  right: 1px;
+}
+
+.aboutImgBottom {
+  position: absolute;
+  bottom: 0;
+  left: 1px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .homeAboutContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .aboutBGSlider {
+    top: 40px;
+  }
+
+  .homeAboutRight {
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+  }
+
+  .aboutImgTop,
+  .aboutImgBottom {
+    position: relative;
+    margin: 10px auto;
+    left: 0;
+    right: 0;
+  }
+}

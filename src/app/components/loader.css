@@ -1,0 +1,72 @@
+.loader-wrapper {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 40px;
+  z-index: 999999;
+  transition: opacity 0.8s ease;
+}
+
+/* LOGO FIXED */
+.loader-logo {
+  width: 160px;
+  margin-bottom: 25px;
+  z-index: 10;
+}
+
+/* BLUEPRINT CONTAINER FIXED */
+.loader-stage {
+  width: 90%;
+  max-width: 900px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+/* FIX SVG HEIGHT */
+.loader-svg {
+  width: 100%;
+  height: auto;
+  max-height: 55vh; /* <= THIS FIXES OVERFLOW */
+  display: block;
+}
+
+/* STRUCTURE LINES */
+.loader-svg * {
+  stroke: #8aa6c4;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* LOADING TEXT FIXED */
+.loader-percent {
+  margin-top: 10px;
+  font-size: 32px;
+  font-weight: 800;
+  color: #456994;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 2px;
+  z-index: 10;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .loader-logo {
+    width: 120px;
+  }
+
+  .loader-svg {
+    max-height: 40vh;
+  }
+
+  .loader-percent {
+    font-size: 26px;
+  }
+}
