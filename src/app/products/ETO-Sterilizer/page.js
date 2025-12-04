@@ -6,4 +6,3 @@ export default function Page() {
     </div>
   );
 }
-/images/logo_01.jpg
