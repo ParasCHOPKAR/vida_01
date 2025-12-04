@@ -38,12 +38,12 @@ export default function Navbar() {
               </Link>
 
               <ul className="dropdown-menu">
-                <li><Link href="/products/autoclave">C.S.S.D. EQUIPMENTS</Link></li>
-                <li><Link href="/products/cssd">Automatic Bed Pan Washer</Link></li>
-                <li><Link href="/products/cssd-furniture">Horizontal Autoclave</Link></li>
-                <li><Link href="/products/bedpan">E.T.O. Sterilizer</Link></li>
-                <li><Link href="/products/sd-dd">Manual Bed Pan Washer</Link></li>
-                <li><Link href="/products/scrub-unit">C.S.S.D. PROJECT</Link></li>
+                <li><Link href="/products">C.S.S.D. EQUIPMENTS</Link></li>
+                <li><Link href="/products">Automatic Bed Pan Washer</Link></li>
+                <li><Link href="/products">Horizontal Autoclave</Link></li>
+                <li><Link href="/products">E.T.O. Sterilizer</Link></li>
+                <li><Link href="/products">Manual Bed Pan Washer</Link></li>
+                <li><Link href="/productst">C.S.S.D. PROJECT</Link></li>
 
 
               </ul>
