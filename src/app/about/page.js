@@ -48,19 +48,19 @@ export default function AboutPage() {
     <div className="history-right">
 
       <div className="history-card large">
-        <img src="/images/hero_01.jpg" alt="History large" />
+        <img src="/pro_pic/about_01.jpg" alt="History large" />
       </div>
 
       <div className="history-card small">
-        <img src="/images/hero_01.jpg" alt="History small 1" />
+        <img src="/pro_pic/hero_01.jpg" alt="History small 1" />
       </div>
 
       <div className="history-card small">
-        <img src="/images/hero_01.jpg" alt="History small 2" />
+        <img src="/pro_pic/about_04.jpg" alt="History small 2" />
       </div>
 
       <div className="history-card small">
-        <img src="/images/hero_01.jpg" alt="History small 3" />
+        <img src="/pro_pic/hero_02.jpg" alt="History small 3" />
       </div>
 
     </div>

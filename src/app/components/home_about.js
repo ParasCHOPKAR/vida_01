@@ -55,12 +55,12 @@ export default function HomeAbout() {
         {/* RIGHT SIDE IMAGES */}
         <div className="homeAboutRight">
           <img
-            src="/images/hero_01.jpg"
+            src="/pro_pic/about_01.jpg"
             alt="doctor"
             className="aboutImg aboutImgTop"
           />
           <img
-            src="/images/hero_01.jpg"
+            src="/pro_pic/about_02.jpg"
             alt="team"
             className="aboutImg aboutImgBottom"
           />

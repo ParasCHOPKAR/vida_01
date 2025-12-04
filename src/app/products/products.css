@@ -304,3 +304,25 @@
   .hero-content { padding-left: 20px; }
   .hero-content h1 { font-size: 30px; }
 }
+
+
+
+.view-more-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 22px;
+  background: #1a4db3;
+  color: white;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.view-more-btn:hover {
+  background: white;
+  color: #1a4db3;
+  border-color: #1a4db3;
+}

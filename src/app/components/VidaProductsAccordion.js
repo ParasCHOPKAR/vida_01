@@ -2,13 +2,19 @@
 
 import React, { useState, useRef } from "react";
 import { gsap } from "gsap";
-import styles from "./vidaAccordion.module.css";
 
 export default function VidaProductsAccordion() {
   const [activeIndex, setActiveIndex] = useState(null);
   const contentRefs = useRef([]);
   const wrapperRefs = useRef([]);
   const iconRefs = useRef([]);
+
+  const colors = {
+    blue: "#0071CE",
+    red: "#E21E26",
+    lightBlue: "#62A8E0",
+    textDark: "#1A1A1A",
+  };
 
   const items = [
     {
@@ -29,14 +35,14 @@ export default function VidaProductsAccordion() {
 • Inter Locking Pass Box
 • Catheter Wash Station
 `,
-      image: "/icons/remove_01.png",
+      image: "/pro_pic/about_03.jpg",
     },
     {
       title: "Research & Development",
       content: `
 Our continuous R&D ensures innovative, safe, durable and world-class hospital equipment solutions.
 `,
-      image: "/icons/remove_0333.png",
+      image: "/pro_pic/about_04.jpg",
     },
     {
       title: "Services",
@@ -45,14 +51,14 @@ Our continuous R&D ensures innovative, safe, durable and world-class hospital eq
 • AMC / CMC
 • Healthcare Training
 `,
-      image: "/images/product_01.jpeg",
+      image: "/pro_pic/about_05.jpg",
     },
     {
       title: "Management & Ownership",
       content: `
 Led by experienced leaders, VIDA ensures superior product quality and global standards.
 `,
-      image: "/icons/remove_0022.png",
+      image: "/pro_pic/about_06.jpg",
     },
   ];
 
@@ -70,83 +76,148 @@ Led by experienced leaders, VIDA ensures superior product quality and global sta
       const height = inner.scrollHeight;
 
       if (i === index && isOpening) {
-        // OPEN
-        gsap.to(outer, {
-          height,
-          opacity: 1,
-          duration: 0.4,
-          ease: "power2.out",
-        });
-
-        gsap.to(icon, {
-          rotate: 0,
-          duration: 0.2,
-        });
-
+        gsap.to(outer, { height, opacity: 1, duration: 0.4, ease: "power2.out" });
+        icon.style.color = colors.red;
         icon.innerHTML = "–";
       } else {
-        // CLOSE
-        gsap.to(outer, {
-          height: 0,
-          opacity: 0,
-          duration: 0.35,
-          ease: "power2.inOut",
-        });
-
-        gsap.to(icon, {
-          rotate: 0,
-          duration: 0.2,
-        });
-
+        gsap.to(outer, { height: 0, opacity: 0, duration: 0.35, ease: "power2.inOut" });
+        icon.style.color = colors.blue;
         icon.innerHTML = "+";
       }
     });
   };
 
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
+    <section
+      style={{
+        width: "100%",
+        padding: "80px 8%",
+        background: "#ffffff",
+        color: colors.textDark,
+        display: "flex",
+        flexDirection: "column",
+        gap: "60px",
+      }}
+    >
+      {/* HEADING */}
+      <div style={{ maxWidth: "650px" }}>
+        <h2
+          style={{
+            fontSize: "54px",
+            fontWeight: 700,
+            margin: 0,
+            color: colors.blue,
+          }}
+        >
+          VIDA Hospital Solutions
+        </h2>
 
-        {/* TOP IMAGE */}
-        <div className={styles.topImageBox}>
-          <img
-            src={activeIndex !== null ? items[activeIndex].image : items[0].image}
-            className={styles.topImage}
-            alt="Preview"
-          />
-        </div>
+        <p
+          style={{
+            marginTop: "12px",
+            fontSize: "18px",
+            color: colors.red,
+          }}
+        >
+          Leading the future of stainless-steel medical furniture & technology.
+        </p>
+      </div>
 
-        {/* ACCORDION */}
-        <div className={styles.accordion}>
+      {/* GRID LAYOUT */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1.1fr 1fr",
+          gap: "60px",
+          alignItems: "start",
+        }}
+      >
+        {/* LEFT SIDE – ACCORDION */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           {items.map((item, i) => (
-            <div key={i} className={styles.item}>
-              
-              <div className={styles.header} onClick={() => toggleAccordion(i)}>
-                <h3>{item.title}</h3>
+            <div
+              key={i}
+              style={{
+                borderBottom: `1px solid ${colors.lightBlue}`,
+                padding: "22px 0",
+              }}
+            >
+              {/* Accordion Header */}
+              <div
+                onClick={() => toggleAccordion(i)}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}
+              >
+                <h3 style={{ margin: 0, fontSize: "20px", fontWeight: 600, color: colors.blue }}>
+                  {item.title}
+                </h3>
+
                 <span
-                  className={styles.icon}
                   ref={(el) => (iconRefs.current[i] = el)}
+                  style={{
+                    fontSize: "30px",
+                    fontWeight: 600,
+                    color: colors.blue,
+                    transition: "0.25s ease",
+                  }}
                 >
                   +
                 </span>
               </div>
 
+              {/* Accordion Content */}
               <div
-                className={styles.contentOuter}
                 ref={(el) => (contentRefs.current[i] = el)}
+                style={{
+                  height: 0,
+                  opacity: 0,
+                  overflow: "hidden",
+                }}
               >
                 <div
-                  className={styles.contentInner}
                   ref={(el) => (wrapperRefs.current[i] = el)}
+                  style={{
+                    whiteSpace: "pre-line",
+                    padding: "14px 0",
+                    lineHeight: 1.6,
+                    fontSize: "16px",
+                    color: colors.textDark,
+                  }}
                 >
                   {item.content}
                 </div>
               </div>
-
             </div>
           ))}
         </div>
 
+        {/* RIGHT – IMAGE PREVIEW BOX */}
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <div
+            style={{
+              width: "100%",
+              height: "500px",
+              borderRadius: "20px",
+              overflow: "hidden",
+              border: `3px solid ${colors.blue}`,
+              boxShadow: `0 0 28px rgba(0,113,206,0.4)`,
+              background: "rgba(0,113,206,0.05)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={activeIndex !== null ? items[activeIndex].image : items[0].image}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              alt="Preview"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

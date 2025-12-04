@@ -39,10 +39,10 @@ export default function Home() {
           <div className={styles.sliderWrapper}>
             <div className={styles.slider}>
               <div className={styles.slideTrack}>
-                <img src="/images/hero_01.jpg" />
-                <img src="/images/hero_01.jpg" />
-                <img src="/images/hero_01.jpg" />
-                <img src="/images/hero_01.jpg" />
+                <img src="/pro_pic/hero_01.jpg" />
+                <img src="/pro_pic/hero_02.jpg" />
+                <img src="/pro_pic/hero_03.jpg" />
+                <img src="/pro_pic/hero_04.jpg" />
               </div>
             </div>
           </div>

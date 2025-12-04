@@ -1,0 +1,166 @@
+.hospital-page {
+  padding: 40px 5%;
+  font-family: "Inter", sans-serif;
+  background: #f5f8ff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* WATERMARK */
+.watermark {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 650px;
+  opacity: 0.055;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* LOGO */
+.logo-wrapper {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.vida-logo {
+  height: 70px;
+}
+
+/* TITLE */
+.title {
+  text-align: center;
+  font-size: 34px;
+  color: #1e3a8a;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+/* ITEM BLOCK */
+.item-block {
+  margin-bottom: 25px;
+}
+
+/* HEADER */
+.item-header {
+  background: white;
+  border-radius: 14px;
+  padding: 18px 22px;
+  border: 2px solid #dbe3ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.item-header.open {
+  border-color: #1e3a8a;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.header-left h2 {
+  font-size: 20px;
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+.short-desc {
+  font-size: 14px;
+  color: #5a5a5a;
+  margin-top: 4px;
+}
+
+/* HEADER RIGHT */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.code-tag {
+  background: #1e3a8a;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.toggle-btn {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 10px;
+  cursor: pointer;
+}
+
+/* CONTENT AREA */
+.item-content {
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  margin-top: 12px;
+  border: 1px solid #d6dff8;
+  display: flex;
+  gap: 30px;
+}
+
+/* LEFT CONTENT */
+.left-content {
+  width: 60%;
+}
+
+.left-content h3 {
+  color: #1e3a8a;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.left-content ul {
+  margin-top: 10px;
+  padding-left: 18px;
+  line-height: 1.7;
+}
+
+/* GALLERY */
+.gallery-box {
+  width: 40%;
+}
+
+.gallery-box h3 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.gallery-img-box {
+  background: #f3f6ff;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .item-content {
+    flex-direction: column;
+  }
+  .left-content, .gallery-box {
+    width: 100%;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
