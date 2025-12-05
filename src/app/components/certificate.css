@@ -21,6 +21,7 @@
 .certificate-header h2 {
   font-size: 34px;
   font-weight: 800;
+  margin-bottom: 8px;
 }
 
 .certificate-header h2 span {
@@ -40,12 +41,13 @@
 ========================== */
 .certificate-card-slider {
   background: #fff;
-  padding: 20px;
+  padding: 18px;
   border-radius: 14px;
   box-shadow: 0 5px 20px rgba(26, 77, 179, 0.12);
   transition: 0.3s ease;
   text-align: center;
-  height: 260px;
+
+  height: 240px;              /* Desktop H */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +65,6 @@
   object-fit: contain;
 }
 
-/* Swiper spacing */
 .certificate-slider {
   padding-bottom: 20px;
 }
@@ -71,7 +72,6 @@
 /* ==========================
    MODAL POPUP
 ========================== */
-
 .certificate-modal {
   position: fixed;
   top: 0;
@@ -86,15 +86,15 @@
   animation: fadeIn 0.3s ease;
 }
 
-/* Modal box */
+/* Modal container */
 .modal-content {
   position: relative;
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  animation: zoomIn 0.25s ease;
   max-width: 90%;
   max-height: 90%;
+  animation: zoomIn 0.25s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,12 +136,71 @@
 /* ==========================
    RESPONSIVE
 ========================== */
+
+
+/* Tablets */
+@media (max-width: 900px) {
+  .certificate-card-slider {
+    height: 210px;
+    padding: 16px;
+  }
+
+  .certificate-header h2 {
+    font-size: 30px;
+  }
+
+  .certificate-header .sub-text {
+    font-size: 15px;
+  }
+}
+
+/* Mobile Devices */
 @media (max-width: 600px) {
+  .certificate-section {
+    padding: 60px 5%;
+  }
+
   .certificate-header h2 {
     font-size: 26px;
   }
 
+  .certificate-header .sub-text {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .certificate-card-slider {
+    height: 180px;               /* Smaller card height */
+    padding: 14px;
+    border-radius: 12px;
+  }
+
   .modal-content {
     padding: 10px;
+    max-width: 92%;
+    max-height: 92%;
+  }
+
+  .close-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+    top: -12px;
+    right: -12px;
+  }
+}
+
+/* Very Small Phones (iPhone SE, 360px width) */
+@media (max-width: 400px) {
+  .certificate-card-slider {
+    height: 160px;
+  }
+
+  .certificate-header h2 {
+    font-size: 22px;
+  }
+
+  .certificate-header .sub-text {
+    font-size: 13px;
   }
 }

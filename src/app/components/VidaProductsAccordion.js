@@ -76,11 +76,11 @@ Led by experienced leaders, VIDA ensures superior product quality and global sta
       const height = inner.scrollHeight;
 
       if (i === index && isOpening) {
-        gsap.to(outer, { height, opacity: 1, duration: 0.4, ease: "power2.out" });
+        gsap.to(outer, { height, opacity: 1, duration: 0.4 });
         icon.style.color = colors.red;
         icon.innerHTML = "–";
       } else {
-        gsap.to(outer, { height: 0, opacity: 0, duration: 0.35, ease: "power2.inOut" });
+        gsap.to(outer, { height: 0, opacity: 0, duration: 0.35 });
         icon.style.color = colors.blue;
         icon.innerHTML = "+";
       }
@@ -91,19 +91,19 @@ Led by experienced leaders, VIDA ensures superior product quality and global sta
     <section
       style={{
         width: "100%",
-        padding: "80px 8%",
+        padding: "60px 5%",  // Reduced padding for mobile width
         background: "#ffffff",
         color: colors.textDark,
         display: "flex",
         flexDirection: "column",
-        gap: "60px",
+        gap: "40px",
       }}
     >
       {/* HEADING */}
-      <div style={{ maxWidth: "650px" }}>
+      <div style={{ width: "100%" }}>
         <h2
           style={{
-            fontSize: "54px",
+            fontSize: "46px",
             fontWeight: 700,
             margin: 0,
             color: colors.blue,
@@ -117,6 +117,7 @@ Led by experienced leaders, VIDA ensures superior product quality and global sta
             marginTop: "12px",
             fontSize: "18px",
             color: colors.red,
+            lineHeight: 1.5,
           }}
         >
           Leading the future of stainless-steel medical furniture & technology.
@@ -125,24 +126,34 @@ Led by experienced leaders, VIDA ensures superior product quality and global sta
 
       {/* GRID LAYOUT */}
       <div
+        className="vida-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: "1.1fr 1fr",
+          gridTemplateColumns: "1fr 0.9fr",
           gap: "60px",
-          alignItems: "start",
+          width: "100%",
         }}
       >
-        {/* LEFT SIDE – ACCORDION */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        {/* LEFT – ACCORDION */}
+        <div
+          className="accordion-left"
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "18px",
+          }}
+        >
           {items.map((item, i) => (
             <div
               key={i}
               style={{
                 borderBottom: `1px solid ${colors.lightBlue}`,
-                padding: "22px 0",
+                padding: "18px 0",
+                width: "100%",
               }}
             >
-              {/* Accordion Header */}
+              {/* Header */}
               <div
                 onClick={() => toggleAccordion(i)}
                 style={{
@@ -150,26 +161,36 @@ Led by experienced leaders, VIDA ensures superior product quality and global sta
                   justifyContent: "space-between",
                   alignItems: "center",
                   cursor: "pointer",
+                  width: "100%",
                 }}
               >
-                <h3 style={{ margin: 0, fontSize: "20px", fontWeight: 600, color: colors.blue }}>
+                <h3
+                  style={{
+                    margin: 0,
+                    fontSize: "19px",
+                    fontWeight: 600,
+                    color: colors.blue,
+                    width: "85%",
+                  }}
+                >
                   {item.title}
                 </h3>
 
                 <span
                   ref={(el) => (iconRefs.current[i] = el)}
                   style={{
-                    fontSize: "30px",
+                    fontSize: "28px",
                     fontWeight: 600,
                     color: colors.blue,
-                    transition: "0.25s ease",
+                    width: "15%",
+                    textAlign: "right",
                   }}
                 >
                   +
                 </span>
               </div>
 
-              {/* Accordion Content */}
+              {/* Content */}
               <div
                 ref={(el) => (contentRefs.current[i] = el)}
                 style={{
@@ -195,8 +216,8 @@ Led by experienced leaders, VIDA ensures superior product quality and global sta
           ))}
         </div>
 
-        {/* RIGHT – IMAGE PREVIEW BOX */}
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+        {/* RIGHT – IMAGE PREVIEW (HIDDEN ON MOBILE) */}
+        <div className="vida-image-box" style={{ display: "flex", justifyContent: "center" }}>
           <div
             style={{
               width: "100%",
@@ -204,21 +225,53 @@ Led by experienced leaders, VIDA ensures superior product quality and global sta
               borderRadius: "20px",
               overflow: "hidden",
               border: `3px solid ${colors.blue}`,
-              boxShadow: `0 0 28px rgba(0,113,206,0.4)`,
-              background: "rgba(0,113,206,0.05)",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              boxShadow: `0 0 24px rgba(0,113,206,0.35)`,
             }}
           >
             <img
               src={activeIndex !== null ? items[activeIndex].image : items[0].image}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
               alt="Preview"
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
           </div>
         </div>
       </div>
+
+      {/* RESPONSIVE CSS */}
+      <style>{`
+        @media (max-width: 992px) {
+          .vida-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+          }
+
+          .vida-image-box {
+            display: none !important;
+          }
+
+          h2 {
+            font-size: 36px !important;
+          }
+
+          section {
+            padding: 40px 4% !important;
+          }
+
+          .accordion-left {
+            width: 100% !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          h2 { font-size: 30px !important; }
+          p { font-size: 15px !important; }
+          h3 { font-size: 16px !important; }
+
+          section {
+            padding: 35px 4% !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

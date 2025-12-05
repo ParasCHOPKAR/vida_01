@@ -38,27 +38,21 @@ export default function Navbar() {
               </Link>
 
               <ul className="dropdown-menu">
-                <li><Link href="/products">C.S.S.D. EQUIPMENTS</Link></li>
-                <li><Link href="/products">Automatic Bed Pan Washer</Link></li>
-                <li><Link href="/products">Horizontal Autoclave</Link></li>
-                <li><Link href="/products">E.T.O. Sterilizer</Link></li>
-                <li><Link href="/products">Manual Bed Pan Washer</Link></li>
-                <li><Link href="/productst">C.S.S.D. PROJECT</Link></li>
-
-
+                <li><Link href="/products/CSSD-Equipments">CSSD Equipments</Link></li>
+                <li><Link href="/products/CSSD-SS-Furniture">CSSD SS Furniture</Link></li>
+                <li><Link href="/products/Automatic-Bed-Pan-Washer-Disinfector">Automatic Bed Pan Washer Disinfector</Link></li>
+                <li><Link href="/products/Manual-Bed-Pan-Washer-Disinfector">Manual Bed Pan Washer Disinfector</Link></li>
+                <li><Link href="/products/Hospital-SS-Furniture">Hospital SS Furniture</Link></li>
+                <li><Link href="/products/Horizontal-Autoclave">Horizontal Autoclave</Link></li>
+                <li><Link href="/products/ETO-Sterilizer">E.T.O. Sterilizer</Link></li>
+                <li><Link href="/products/CSSD-Project">CSSD Project</Link></li>
               </ul>
             </li>
 
             {/* SERVICES DROPDOWN */}
             <li className="dropdown">
-              <Link href="/services" className="dropdown-title">
-                Services ▾
-              </Link>
-              <ul className="dropdown-menu">
-                <li><Link href="/services/workshops">Equipment Maintenance Workshops</Link></li>
-                <li><Link href="/services/amc">AMC / CMC</Link></li>
-                <li><Link href="/services/training">Healthcare Training</Link></li>
-              </ul>
+              <Link href="/services" className="dropdown-title">Services </Link>
+           
             </li>
 
             <li><Link href="/contact">Contact</Link></li>
@@ -84,43 +78,41 @@ export default function Navbar() {
           <li><Link href="/about" onClick={closeSidebar}>About</Link></li>
 
           {/* MOBILE PRODUCTS DROPDOWN */}
-          <li>
-            <button
-              className="mobile-dropdown-btn"
-              onClick={() => setProdOpen(!prodOpen)}
-            >
-              Products {prodOpen ? "▴" : "▾"}
-            </button>
+     <li>
+  <button
+    className="mobile-dropdown-btn"
+    onClick={() => setProdOpen(!prodOpen)}
+  >
+    Products {prodOpen ? "▴" : "▾"}
+  </button>
 
-            <ul className={`mobile-dropdown ${prodOpen ? "show" : ""}`}>
-              <li><Link href="/products/autoclave" onClick={closeSidebar}>Autoclave Horizontal / Vertical</Link></li>
-              <li><Link href="/products/cssd" onClick={closeSidebar}>All CSSD Equipments</Link></li>
-              <li><Link href="/products/cssd-furniture" onClick={closeSidebar}>CSSD Furniture</Link></li>
-              <li><Link href="/products/bedpan" onClick={closeSidebar}>Automatic Bed Pan Washer</Link></li>
-              <li><Link href="/products/scrub-unit" onClick={closeSidebar}>Scrub Units</Link></li>
-              <li><Link href="/products/endoscopy" onClick={closeSidebar}>Endoscopy Dryer</Link></li>
-              <li><Link href="/products/wash-sinks" onClick={closeSidebar}>Baby Wash Sink</Link></li>
-            </ul>
-          </li>
+  <ul className={`mobile-dropdown ${prodOpen ? "show" : ""}`}>
+
+    {/* VIEW ALL PRODUCTS LINK */}
+    <li><Link href="/products" onClick={closeSidebar}>View All Products</Link></li>
+
+    <li><Link href="/products/CSSD-Equipments" onClick={closeSidebar}>CSSD Equipments</Link></li>
+    <li><Link href="/products/CSSD-SS-Furniture" onClick={closeSidebar}>CSSD SS Furniture</Link></li>
+    <li><Link href="/products/Automatic-Bed-Pan-Washer-Disinfector" onClick={closeSidebar}>Automatic Bed Pan Washer Disinfector</Link></li>
+    <li><Link href="/products/Manual-Bed-Pan-Washer-Disinfector" onClick={closeSidebar}>Manual Bed Pan Washer Disinfector</Link></li>
+    <li><Link href="/products/Hospital-SS-Furniture" onClick={closeSidebar}>Hospital SS Furniture</Link></li>
+    <li><Link href="/products/Horizontal-Autoclave" onClick={closeSidebar}>Horizontal Autoclave</Link></li>
+    <li><Link href="/products/ETO-Sterilizer" onClick={closeSidebar}>E.T.O. Sterilizer</Link></li>
+    <li><Link href="/products/CSSD-Project" onClick={closeSidebar}>CSSD Project</Link></li>
+
+  </ul>
+</li>
+
 
           {/* MOBILE SERVICES DROPDOWN */}
-          <li>
-            <button
-              className="mobile-dropdown-btn"
-              onClick={() => setServOpen(!servOpen)}
-            >
-              Services {servOpen ? "▴" : "▾"}
-            </button>
+ <li>
+  <Link href="/services" onClick={closeSidebar}>
+    Services
+  </Link>
+</li>
 
-            <ul className={`mobile-dropdown ${servOpen ? "show" : ""}`}>
-              <li><Link href="/services/workshops" onClick={closeSidebar}>Equipment Maintenance Workshops</Link></li>
-              <li><Link href="/services/amc" onClick={closeSidebar}>AMC / CMC</Link></li>
-              <li><Link href="/services/training" onClick={closeSidebar}>Healthcare Training</Link></li>
-            </ul>
-          </li>
 
           <li><Link href="/contact" onClick={closeSidebar}>Contact</Link></li>
-
         </ul>
       </aside>
     </>
