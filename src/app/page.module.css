@@ -8,22 +8,29 @@
 .hero {
   width: 100%;
   height: 620px;
+      color: #0a4aa9;
 
-  /* BACKGROUND IMAGE + BLUE OVERLAY */
   background:
-    linear-gradient(rgba(0, 92, 170, 0.82), rgba(0, 92, 170, 0.82)),
-    url("/images/hero-bg.jpg") center/cover no-repeat;
+linear-gradient(
+  110deg,
+    /* Deep Blue */
+  rgba(106, 183, 243, 0.70)   /* Light Blue */
+),
+
+
+  url("/images/hero-bg.jpg") center/cover no-repeat;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 70px;
-  color: #fff;
-  position: relative;
+  justify-content: center;
+  gap: 200px;              /* reduced space between text + slider */
+  padding: 0 40px;        /* reduced global padding */
+  color:  #05285d;
 
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
 }
+
 
 /* LEFT TEXT ----------------------------- */
 .left {

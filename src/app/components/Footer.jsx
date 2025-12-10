@@ -25,7 +25,7 @@ export default function Footer() {
             <a href="#"><img src="/images/facebook.webp" alt="Facebook" className="social-icon" /></a>
             <a href="#"><img src="/images/instagram.png" alt="Instagram" className="social-icon" /></a>
             <a href="#"><img src="/images/linkedin.webp" alt="LinkedIn" className="social-icon" /></a>
-            <a href="#"><img src="/images/whatsapp.jpg" alt="WhatsApp" className="social-icon" /></a>
+            <a href="https://www.youtube.com/@VidaLifesciences"><img src="/icons/youtube.png" alt="WhatsApp" className="social-icon" /></a>
           </div>
         </div>
 

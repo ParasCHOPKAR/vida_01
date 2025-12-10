@@ -6,6 +6,8 @@ import Loader from "./components/Loader";
 import HomeAbout from "./components/home_about";
 import VidaProductsAccordion from "./components/VidaProductsAccordion";
 import CertificateSection from "./components/Certificate";
+import VideoSection from "./components/video";
+
 
 
 export default function Home() {
@@ -79,6 +81,10 @@ export default function Home() {
 
         {/* VIDA PRODUCTS ACCORDION */}
         <VidaProductsAccordion />
+
+        
+<VideoSection />
+
 
         <CertificateSection />
 
